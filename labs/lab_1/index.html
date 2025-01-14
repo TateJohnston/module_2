@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="lab exercise one" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Tate Johnston" />
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="/">Home</a>
+        <a href="form.html">Form</a>
+      </nav>
+    </header>
+    <article>
+      <h1>My HTML learning Journey</h1>
+      <div>First Div</div>
+      <div>Next in Line</div>
+      <div>Last one</div>
+
+      <span>This is a span</span><span>Second span</span
+      ><span>Ending Span</span>
+      <p>p represents paragraph without preserving spacing</p>
+      <pre>
+        Text in         a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both      spaces and
+        line breaks
+    </pre
+      >
+      <h2>Breakfast</h2>
+      <ul>
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Juice</li>
+        <li>
+          Coffee
+          <ul>
+            <li>Flat White</li>
+            <li>Latte</li>
+          </ul>
+        </li>
+      </ul>
+      <ol>
+        <li>Cook the bacon</li>
+        <li>Put toast in the toaster</li>
+        <li>Cook the eggs</li>
+      </ol>
+    </article>
+    <article>
+      <h2>Making a table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">First header</th>
+            <th>Second header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>First cell - first row</td>
+            <td>Second cell - first row</td>
+            <td>Third cell - first row</td>
+          </tr>
+          <tr>
+            <td>First cell - second row</td>
+            <td rowspan="2">Second cell - second row</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>First Cell - third row</td>
+            <td>Second cell - third row</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+    <article>
+      <h2>Images</h2>
+      <img height="250px" src="liverpoolLogo.jpg" alt="Liverpool Logo" />
+      <img
+        height="250px"
+        width="326.25px"
+        height=""
+        src="html_lab_image.jpg"
+        alt="Sunset sky"
+      />
+      <video autoplay width="250">
+        <source src="flower.webm" type="video/webm" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+      <audio autoplay src="t-rex-roar.mp3">
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+    </article>
+    <main></main>
+    <footer>Copyright &copy; 2024</footer>
+  </body>
+</html>
