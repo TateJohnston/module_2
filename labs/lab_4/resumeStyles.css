@@ -1,0 +1,102 @@
+html,
+body {
+  background-image: url(background_image.webp);
+  background-repeat: round;
+  background-size: 100%;
+  height: 100%;
+  margin: 0;
+}
+.pageHeader {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+  font-family: "Space Grotesk", serif;
+  letter-spacing: 3px;
+  text-decoration: overline underline;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+#contact {
+  border-radius: 15px;
+  padding: 1em;
+  border: 10px solid #00000049;
+  box-shadow: 2px 2px 2px 2px grey;
+  background-color: #bbe4e9;
+  margin-left: 1em;
+}
+#workExperience {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 10px solid #00000049;
+  box-shadow: 2px 2px 2px 2px grey;
+  background-color: #bbe4e9;
+  padding: 10px;
+}
+#skills {
+  padding: 31.5px;
+  border: 10px solid #00000049;
+  box-shadow: 2px 2px 2px 2px grey;
+  border-radius: 15px;
+  background-color: #bbe4e9;
+  margin-right: 1em;
+}
+.columns h4,
+h3 {
+  display: list-item;
+  margin-left: 1em;
+}
+.columns h4,
+h3:not(.programmingSkills) {
+  display: list-item;
+  margin-left: 1em;
+}
+#lenards,
+#goKart {
+  background-color: #79c2d0;
+}
+#lenards:hover,
+#goKart:hover {
+  background-color: beige;
+}
+#referees {
+  background-color: #79c2d0;
+  padding: 10px;
+  text-align: center;
+}
+
+a {
+  color: #385170;
+  font-style: italic;
+  font-size: larger;
+}
+a:hover {
+  cursor: pointer;
+  color: #5585b5;
+  font-weight: bold;
+}
+.mePhoto {
+  height: 30vh;
+  margin: 20px;
+  border: 10px solid #00000049;
+  box-shadow: 2px 2px 2px 2px grey;
+  border-radius: 15px;
+}
+h2 {
+  border-bottom: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.mainContent {
+  padding: 10px;
+}
+.mainContent:hover {
+  background-color: beige;
+}
