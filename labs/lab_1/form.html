@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </header>
+
+    <main>
+      <form method="POST" action="http://127.0.0.1:5500/form.html">
+        <div>
+          <label for="firstName">First Name</label>
+          <input type="text" name="name" id="firstName"  />
+         </div>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input type="text" name="name" id="lastName" />
+        </div>
+        <div class="radio">
+          <input type="radio" name="favLanguage" id="html" value="HTML" />
+          <label for="html">HTML</label>
+          <input type="radio" name="favLanguage" id="css" value="CSS" />
+          <label for="css">CSS</label>
+          <input
+          type="radio"
+          name="fav_language"
+          id="javascript"
+          value="JavaScript"
+        />
+        <label for="javascript">JavaScript</label>        
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="typeCar" id="hatchback" value="hatchback">Hatchback</input>
+            <label for="hatchback"></label>
+            <input type="checkbox" name="typeCar" id="sedan" value="sedan">Sedan</input>
+            <label for="sedan"></label>    
+            <input type="checkbox" name="typeCar" id="ute" value="ute">Ute</input>
+            <label for="ute"></label>
+        </div>
+        <div class="dropdown">
+        <label for="carBrand">What brand is your car?</label>
+        <select name="carBrand" id="carBrand">
+            <option value="ford">Ford</option>
+            <option value="holden">Holden</option>
+            <option value="nissan">Nissan</option>
+            <option value="mazda">Mazda</option>
+        </select>
+        </div>
+        <button type="submit">submit</button>
+      </form>
+    </main>
+
+    <footer>Copyright &copy; 2024</footer>
+  </body>
+</html>
