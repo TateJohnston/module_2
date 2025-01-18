@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip</title>
+    <link href="coinFlipStyles.css" rel="stylesheet" />
+    <script>
+      const headsPlayers = [];
+      function addHeads() {
+        console.log("Heads button is working");
+        let players = document.getElementById("headsInput").value;
+        headsPlayers.push(players);
+        document.getElementById("headsPlayers").innerText =
+          headsPlayers.join(", ");
+        document.getElementById("headsInput").value = "";
+      }
+
+      const tailsPlayers = [];
+      function addTails() {
+        console.log("Tails button is working");
+        let players = document.getElementById("tailsInput").value;
+        tailsPlayers.push(players);
+        document.getElementById("tailsPlayers").innerText =
+          tailsPlayers.join(", ");
+        document.getElementById("tailsInput").value = "";
+      }
+
+      const storedResults = [];
+      function flipCoin() {
+        const fiveGames = document.getElementById("fiveGames").checked;
+        const tenGames = document.getElementById("tenGames").checked;
+
+        if (
+          (fiveGames && storedResults.length >= 5) ||
+          (tenGames && storedResults.length >= 10)
+        ) {
+          return;
+        }
+        const result = Math.random() < 0.5 ? "Heads" : "Tails";
+        storedResults.push(result);
+        document.getElementById("result").innerText = storedResults.join(", ");
+
+        const headsCount = storedResults.filter(
+          (result) => result === "Heads"
+        ).length;
+        if (fiveGames && storedResults.length >= 5) {
+          if (headsCount >= 3) {
+            document.getElementById("winner").innerText = "Heads is the Winner";
+          } else {
+            document.getElementById("winner").innerText = "Tails is the Winner";
+          }
+        }
+        if (tenGames && storedResults.length >= 10) {
+          if (headsCount > 5) {
+            document.getElementById("winner").innerText = "Heads is the Winner";
+          } else if (headsCount === 5) {
+            document.getElementById("winner").innerText = "It's a Tie";
+          } else if (headsCount < 5) {
+            document.getElementById("winner").innerText = "Tails is the Winner";
+          }
+        }
+      }
+
+      function reset() {
+        storedResults.length = 0;
+        document.getElementById("result").innerText = "";
+        document.getElementById("winner").innerText = "";
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the Coin Flip Game</h1>
+    </header>
+    <div id="">
+      <input type="radio" id="fiveGames" name="amountGames" value="5" />
+      <label for="fiveGames">5 Games</label>
+      <input type="radio" id="tenGames" name="amountGames" value="10" />
+      <label for="tenGames">10 Games</label>
+      <input type="text" name="addPlayer" id="tailsInput" />
+      <button type="submit" onclick="addTails()">Tails</button>
+      <input type="text" name="addPlayer" id="headsInput" />
+      <button type="submit" onclick="addHeads()">Heads</button>
+    </div>
+    <p>Click the button to flip the coin!</p>
+    <button onclick="flipCoin()">Flip Coin</button>
+    <button onclick="reset()">Reset</button>
+    <p id="result"></p>
+    <p id="headsPlayers"></p>
+
+    <p id="tailsPlayers"></p>
+    <h2>Winners</h2>
+    <p id="winner"></p>
+  </body>
+</html>
