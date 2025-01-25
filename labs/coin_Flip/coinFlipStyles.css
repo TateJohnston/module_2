@@ -1,3 +1,119 @@
+body {
+  background-color: #c3bef0;
+}
 h1 {
   text-align: center;
+}
+.winners {
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 1em;
+  font-weight: bold;
+  color: black;
+  font-size: larger;
+  max-width: 25vw;
+}
+#headsPlayers {
+  border: 2px solid rgba(0, 0, 0, 0.519);
+  border-radius: 20%;
+  background-color: #defcf9;
+  font-size: larger;
+  padding: 0.3em;
+  box-shadow: 2px 2px grey;
+  height: 20vh;
+  width: 20vw;
+  margin: auto;
+}
+#tailsPlayers {
+  border: 2px solid rgba(0, 0, 0, 0.519);
+  border-radius: 20%;
+  background-color: #defcf9;
+  font-size: larger;
+  padding: 0.3em;
+  box-shadow: 2px 2px grey;
+  height: 20vh;
+  width: 20vw;
+}
+#tailsPlayers,
+#headsPlayers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#settings {
+  background-color: #cadefc;
+  border: 2px solid rgba(0, 0, 0, 0.519);
+  border-radius: 10%;
+  height: auto;
+  width: 20vw;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 1em;
+  box-shadow: 2px 2px grey;
+}
+.ruleButton {
+  border: 2px solid rgba(0, 0, 0, 0.519);
+  border-radius: 20%;
+  background-color: #defcf9;
+  font-size: larger;
+  padding: 0.3em;
+  width: 4em;
+  box-shadow: 2px 2px grey;
+}
+#ruleButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+button:hover {
+  cursor: pointer;
+  background-color: beige;
+}
+#coinFlip {
+  border: 2px solid rgba(0, 0, 0, 0.519);
+  box-shadow: 2px 2px grey;
+  background-color: #cadefc;
+  border-radius: 10%;
+  width: fit-content;
+  width: 20vw;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 2em;
+}
+#coinFlip button {
+  border: 2px solid rgba(0, 0, 0, 0.519);
+  border-radius: 20%;
+  background-color: #defcf9;
+  font-size: larger;
+  padding: 0.3em;
+  box-shadow: 2px 2px grey;
+  width: fit-content;
+  margin: 0.3em;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10vh;
+}
+h2 {
+  text-align: center;
+}
+#result {
+  max-width: 2;
+}
+#counts {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  gap: 3em;
 }

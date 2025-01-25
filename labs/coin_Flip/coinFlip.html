@@ -9,21 +9,21 @@
       const headsPlayers = [];
       function addHeads() {
         console.log("Heads button is working");
-        let players = document.getElementById("headsInput").value;
+        let players = document.getElementById("addPlayer").value;
         headsPlayers.push(players);
         document.getElementById("headsPlayers").innerText =
           headsPlayers.join(", ");
-        document.getElementById("headsInput").value = "";
+        document.getElementById("addPlayer").value = "";
       }
 
       const tailsPlayers = [];
       function addTails() {
         console.log("Tails button is working");
-        let players = document.getElementById("tailsInput").value;
+        let players = document.getElementById("addPlayer").value;
         tailsPlayers.push(players);
         document.getElementById("tailsPlayers").innerText =
           tailsPlayers.join(", ");
-        document.getElementById("tailsInput").value = "";
+        document.getElementById("addPlayer").value = "";
       }
 
       const storedResults = [];
@@ -46,26 +46,41 @@
         ).length;
         if (fiveGames && storedResults.length >= 5) {
           if (headsCount >= 3) {
-            document.getElementById("winner").innerText = "Heads is the Winner";
+            document.getElementById("headsWins").innerText =
+              headsPlayers.join(" & ") + " " + "for the Win!";
           } else {
-            document.getElementById("winner").innerText = "Tails is the Winner";
+            document.getElementById("tailsWins").innerText =
+              tailsPlayers.join(" & ") + " " + "for the Win!";
           }
         }
         if (tenGames && storedResults.length >= 10) {
           if (headsCount > 5) {
-            document.getElementById("winner").innerText = "Heads is the Winner";
+            document.getElementById("headsWins").innerText =
+              headsPlayers.join(" & ") + " " + "for the Win!!";
           } else if (headsCount === 5) {
-            document.getElementById("winner").innerText = "It's a Tie";
+            document.getElementById("headsWins").innerText = "It's a Tie";
+            document.getElementById("tailsWins").innerText = "It's a Tie";
           } else if (headsCount < 5) {
-            document.getElementById("winner").innerText = "Tails is the Winner";
+            document.getElementById("tailsWins").innerText =
+              tailsPlayers.join(" & ") + " " + "for the Win!!";
           }
         }
       }
 
-      function reset() {
+      function goAgain() {
         storedResults.length = 0;
         document.getElementById("result").innerText = "";
-        document.getElementById("winner").innerText = "";
+        document.getElementById("headsWins").innerText = "";
+        document.getElementById("tailsWins").innerText = "";
+      }
+      function resetTeams() {
+        tailsPlayers.length = 0;
+        headsPlayers.length = 0;
+        document.getElementById("result").innerText = "";
+        document.getElementById("headsWins").innerText = "";
+        document.getElementById("tailsWins").innerText = "";
+        document.getElementById("headsPlayers").innerText = "";
+        document.getElementById("tailsPlayers").innerText = "";
       }
     </script>
   </head>
@@ -73,24 +88,56 @@
     <header>
       <h1>Welcome to the Coin Flip Game</h1>
     </header>
-    <div id="">
-      <input type="radio" id="fiveGames" name="amountGames" value="5" />
-      <label for="fiveGames">5 Games</label>
-      <input type="radio" id="tenGames" name="amountGames" value="10" />
-      <label for="tenGames">10 Games</label>
-      <input type="text" name="addPlayer" id="tailsInput" />
-      <button type="submit" onclick="addTails()">Tails</button>
-      <input type="text" name="addPlayer" id="headsInput" />
-      <button type="submit" onclick="addHeads()">Heads</button>
-    </div>
-    <p>Click the button to flip the coin!</p>
-    <button onclick="flipCoin()">Flip Coin</button>
-    <button onclick="reset()">Reset</button>
-    <p id="result"></p>
-    <p id="headsPlayers"></p>
+    <main>
+      <figure>
+        <h2>Heads</h2>
+        <div class="playersDiv">
+          <section class="players" id="headsPlayers"></section>
+        </div>
+        <figcaption class="winners" id="headsWins"></figcaption>
+      </figure>
 
-    <p id="tailsPlayers"></p>
-    <h2>Winners</h2>
-    <p id="winner"></p>
+      <div id="columnTwo">
+        <div id="settings">
+          <div id="radios">
+            <h3>How many games?</h3>
+            <input type="radio" id="fiveGames" name="amountGames" value="5" />
+            <label for="fiveGames">5 Games</label>
+            <input type="radio" id="tenGames" name="amountGames" value="10" />
+            <label for="tenGames">10 Games</label>
+          </div>
+          <div id="playerInput">
+            <h3>Enter Name</h3>
+            <input type="text" name="addPlayer" id="addPlayer" />
+          </div>
+          <div id="ruleButtons">
+            <h3>Heads or Tails?</h3>
+            <div>
+              <button class="ruleButton" type="submit" onclick="addHeads()">
+                Heads
+              </button>
+              <button class="ruleButton" type="submit" onclick="addTails()">
+                Tails
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="coinFlip">
+          <p>Click the button to flip the coin!</p>
+          <button onclick="flipCoin()">Flip Coin</button>
+          <button onclick="goAgain()">Go Again!</button>
+          <button onclick="resetTeams()">Reset Teams</button>
+          <p id="result"></p>
+        </div>
+      </div>
+
+      <figure>
+        <h2>Tails</h2>
+        <div class="playersDiv">
+          <section class="players" id="tailsPlayers"></section>
+        </div>
+        <figcaption class="winners" id="tailsWins"></figcaption>
+      </figure>
+    </main>
   </body>
 </html>
